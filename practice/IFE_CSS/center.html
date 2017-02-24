@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>CSS定位和居中问题</title>
+    <style type="text/css">
+
+        .wrapper{
+            background:gray;
+            height:200px;
+            width:400px;
+            /*margin:0 auto;*/
+            /*position:relative;*/
+            /*水平垂直均居中*/
+            position:absolute;
+            top:0;bottom:0;
+            left:0;right:0;
+            margin:auto;
+            border:solid red 2px;
+
+        }
+        .s{
+            background:yellow;
+            height:50px;
+            width:50px;
+            position:absolute;
+        }
+        .semi-1{
+            -moz-border-radius-bottomright: 50px;
+            -webkit-border-bottom-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+        .semi-2{
+            -moz-border-radius-topleft: 50px;
+            -webkit-border-top-left-radius: 50px;
+            border-top-left-radius: 50px;
+            bottom:0;
+            right:0;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="s semi-1">er1</div>
+    <div class="s semi-2">er2</div>
+</div>
+</body>
+</html>
