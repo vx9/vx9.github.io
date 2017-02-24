@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>canvas小试</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            text-align:center;
+        }
+        canvas {
+            /*width:600px;*/
+            /*height:648px;要在标签里面改，不能在这里*/
+            /*background:red;*/
+            display:block;
+            margin:auto;
+
+        }
+        /*引入自定义字体库*/
+        @font-face{
+            src:url("fonts/qs.otf");
+            font-family:qs;
+        }
+        /*
+            @keyframes css3帧动画
+            @media 媒体查询
+        */
+    </style>
+</head><!--onload="draw()"-->
+
+<canvas id="can" width="600" height="648">
+  rtytiuyoiuo
+</canvas>
+<label>请输入内容</label>
+<input type="text" id="txt" value="nullify学习"/>
+<label>请输入字体背景：</label>
+<select name="" id="bg">
+    <option value="images/1.png">1</option>
+    <option value="images/2.png">2</option>
+    <option value="images/3.png">3</option>
+    <option value="images/4.png">4</option>
+</select>
+<!--<img src="img/icon.png" id="img">-->
+<script>
+    var can = document.getElementById('can');
+    var txt = document.getElementById('txt');
+    var bg = document.getElementById('bg');
+    //var oImg = document.getElementById('img');
+    var cxt = can.getContext("2d");
+//    function draw(){
+//        cxt.drawImage(oImg,0,0,100,100);
+//    }
+    var oImg = new Image();
+    var oBg = new Image();
+    oImg.src = "images/bg.png";
+    oBg.src ="images/1.png";
+    console.log(oImg);
+
+   //监听文档是否加载完成
+    oBg.onload = function(){
+        draw();
+    }
+    function draw(){
+        cxt.drawImage(oImg,0,0);//要绘制的图片
+        oBg.src = bg.value;
+        //设置图片为fillStyle颜色值
+        var color = cxt.createPattern(oBg,'repeat');
+        cxt.fillStyle = color;//颜色
+        //计算文字尺寸
+        var padd = 50;
+        var ft = Math.ceil((can.width - padd*2)/txt.value.length);
+        //必须加上文字类型才能显示 文本大小尺寸
+        cxt.font= ft +'px qs';
+        //设置文本垂直基线
+
+            //获取文本真宽度,没有高度
+        var w = cxt.measureText(txt.value).width;
+        //计算文本回执坐标
+        var x = (can.width - w)/2;
+        var y = (can.height - ft)/2;
+        //绘制文本阴影
+        cxt.shadowOffsetX = 5;//在水平方向偏移
+        cxt.shadowOffsetY = 5;
+        cxt.shadowBlur = 4;//模糊度
+        cxt.shadowColor = "rgba(0,0,0,1)";
+        console.log(w);
+            //绘制文本
+        cxt.fillText(txt.value,x,y);//绘制实心文本。
+
+    }
+
+</script>
+</body>
+</html>
