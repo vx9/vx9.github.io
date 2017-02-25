@@ -2,91 +2,105 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <title>vx9's website</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta name="keywords" content="Yu, Xin website">
+    <link rel="icon" type="image/png" href="images/icon.png">
+    <title>Yu, Xin</title>
+    <link href="css/font.css" rel="stylesheet">
+    <link href="css/bootstrap/3.3.4/css/bootstrap.css" rel="stylesheet">
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-<header>
-    <div class="header-box">
-        <h1 class="header-title">
-            <a >vx9's  website</a>
-        </h1>
-
-        <ul class="nav">
-            <li>
-                <a href="http://blog.csdn.net/qq_21184771" target="_blank">vx9's CSDN blog</a>
-            </li>
-        </ul>
+<main id="body_wrapper">
+    <div class="index_header">
+        <header class="header clearfix">
+            <div class="menu">
+                <a href="javascript:;" class="icon-icon_menu"></a>
+            </div>
+            <div class="search">
+                <input type="text"/>
+                <a href="javascript:;" class="icon-icon_search"></a>
+            </div>
+            <h1 class="title"><a href="#">Yu.Xin</a></h1>
+            <div class="menu_wrapper">
+                <nav class="nav">
+                    <li><a class="resume" href="resume/#">简历</a></li>
+                    <li><a href="#content">小型实践</a></li>
+                    <li><a href="practice/index.html">自我练习</a></li>
+                </nav>
+            </div>
+            <div class="down">
+                <a href="#content" class="icon-arrow2_down"></a>
+            </div>
+        </header>
     </div>
-</header>
-
-<!-- page-wrapper begins -->
-<div class="page-wrapper clear">
-    <!-- aside begins -->
-    <aside>
-        <ul>
-            <li>
-                <a href="#ife-1">one</a>
-            </li>
-            <li>
-                <a href="#ife-2">two</a>
-            </li>
-            <li>
-                <a href="#prac">three</a>
-            </li>
-        </ul>
-    </aside>
-    <!-- aside ends -->
-
-
-    <!-- main-content begins -->
-    <div class="main-content">
-        <section id="ife-1">
-            <ul>
-                <li>
-                    <a href="#">三栏式布局</a>
-                </li>
-                <li>
-                    <a href="practice/IFE_CSS/center.html" target="_blank">定位和居中问题</a>
-                </li>
-
-            </ul>
-        </section>
-
-        <section id="ife-2">
-            <ul>
-                <li>
-                    <a href="#"> 基础JavaScript练习（一）</a>
-                </li>
-
-                <li>
-                    <a href="#"> 表单（三）联动</a>
-                </li>
-            </ul>
-        </section>
-
-        <section id="prac">
-            <ul>
-                <li>
-                    <a href="#">what</a>
-                </li>
-
-            </ul>
-        </section>
-
-
+    <div class="main" id="main">
+        <div id="content" class="main_wrap">
+            <div class="list clearfix">
+                <article>
+                  <div class="row">
+                      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                          <a class="list-item" href="#">
+                              <img src="images/projects_index/#" class="version-image">
+                              <div class="version-description">
+                                  <span class="version-name">3d立体旋转图</span>
+                                  <span class="version-desc">JavaScript+CSS3实现</span>
+                              </div>
+                              <div class="version-details">
+                                  <span class="title">查看案例</span>
+                                  <span class="info">查看学习文档</span>
+                              </div>
+                          </a>
+                      </div>
+                      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                          <a class="list-item" href="#">
+                              <img src="images/projects_index/#" class="version-image">
+                              <div class="version-description">
+                                  <span class="version-name">翻转变大</span>
+                                  <span class="version-desc">纯CSS实现</span>
+                              </div>
+                              <div class="version-details">
+                                  <span class="title">查看案例</span>
+                                  <span class="info">查看学习文档</span>
+                              </div>
+                          </a>
+                      </div>
+                      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <a class="list-item" href="#">
+                            <img src="images/projects_index/#" class="version-image">
+                            <div class="version-description">
+                                <span class="version-name">照片墙</span>
+                                <span class="version-desc">~~~</span>
+                               </div>
+                            <div class="version-details">
+                                <span class="title">查看网页</span>
+                                <span class="info">查看学习文档</span>
+                            </div>
+                        </a>
+                    </div>
+                      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                          <a href="practice/canvas/canvas.html" class="list-item">
+                              <img src="images/projects_index/canvas.png" class="version-image">
+                              <div class="version-description">
+                                  <span class="version-name">黑板报</span>
+                                  <span class="version-desc">JavaScript实现canvas功能小尝试</span>
+                              </div>
+                              <div class="version-details">
+                                  <span class="title">查看网页</span>
+                                  <span class="info">查看学习文档</span>
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+                </article>
+            </div>
+        </div>
     </div>
-    <!-- main-content ends -->
-
-</div>
-<!-- page-wrapper ends -->
+</main>
 <footer>
-
-    <span class="copyrights">
-        <a href="#">Advertisement</a> | <a href="#">Contact Me</a> | <a href="#">Job Hunting</a> <br/>
-       Copyright © 2010 - 2017 YU Xin Personal, All Rights Reserved
-    </span>
+    <h2 class="logo"></h2>
+    <div><a href="#">Advertisement</a> | <a href="#">Contact Me</a> | <a href="#">Job Hunting</a> <br/>
+    Copyright © 2010 - 2017 Yu, Xin Personal, All Rights Reserved </div>
 </footer>
 </body>
 </html>

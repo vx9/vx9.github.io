@@ -2,6 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="../../images/icon.png">
     <title>canvas小试</title>
     <style>
         *{
@@ -30,18 +31,18 @@
         */
     </style>
 </head><!--onload="draw()"-->
-
-<canvas id="can" width="600" height="648">
-  rtytiuyoiuo
+<body>
+<canvas id="can" width="900" height="500">
+  您的浏览器不支持canvas，请更换支持canvas的浏览器，谢谢。
 </canvas>
-<label>请输入内容</label>
-<input type="text" id="txt" value="nullify学习"/>
-<label>请输入字体背景：</label>
-<select name="" id="bg">
-    <option value="images/1.png">1</option>
-    <option value="images/2.png">2</option>
-    <option value="images/3.png">3</option>
-    <option value="images/4.png">4</option>
+<label>请输入内容：</label>
+<input type="text" id="txt" value="JS实践之canvas学习"/>
+<label>改变内容颜色：</label>
+<select name="bg" id="bg">
+    <option value="images/yellow.png">yellow</option>
+    <option value="images/red.png">red</option>
+    <option value="images/blue.png">blue</option>
+    <option value="images/green.png">green</option>
 </select>
 <!--<img src="img/icon.png" id="img">-->
 <script>
@@ -55,18 +56,18 @@
 //    }
     var oImg = new Image();
     var oBg = new Image();
-    oImg.src = "images/bg.png";
-    oBg.src ="images/1.png";
-    console.log(oImg);
+    oImg.src = "images/bcb_1.png";
+    oBg.src ="images/red.png";
+    //console.log(oImg);
 
    //监听文档是否加载完成
     oBg.onload = function(){
         draw();
-    }
+    };
     function draw(){
         cxt.drawImage(oImg,0,0);//要绘制的图片
         oBg.src = bg.value;
-        //设置图片为fillStyle颜色值
+        //fillStyle设置图片形式，颜色用背景图。
         var color = cxt.createPattern(oBg,'repeat');
         cxt.fillStyle = color;//颜色
         //计算文字尺寸
@@ -86,7 +87,7 @@
         cxt.shadowOffsetY = 5;
         cxt.shadowBlur = 4;//模糊度
         cxt.shadowColor = "rgba(0,0,0,1)";
-        console.log(w);
+       // console.log(w);
             //绘制文本
         cxt.fillText(txt.value,x,y);//绘制实心文本。
 
