@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3d</title>
+    <link rel="icon" type="image/png" href="../../images/icon.png">
+    <style id="css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap {
+            width: 800px; /*图片800*360*/
+            height: 360px;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        #pic {
+            width: 800px;
+            height: 360px;
+            perspective: 1500px; /*景深就是视角*/
+        }
+
+        #pic ul li {
+            /*width: 200px;*/
+            height: 360px;
+            float: left;
+            list-style: none;
+            position: relative;
+            transform-style: preserve-3d; /*构造3d场景，一个LI就是一个立体块*/
+            transform: translateZ(-180px);
+            transition: 1s 0.008s; /*渐变,第一个值是过渡所需时间 第二值是动画延迟*/
+        }
+
+        #pic ul li div {
+            width: 200px; /*js来做*/
+            height: 360px;
+            position: absolute;
+        }
+
+        #pic ul li div:nth-child(1) {
+            top: -360px;
+            transform-origin: bottom; /*旋转轴心是下边*/
+            transform: translateZ(180px) rotateX(90deg); /*旋转属性：往外拉180px，在X方向旋转90度，逆时针旋转就是负，顺时针就是正*/
+            background: url('images/1.jpg');
+            background-position: 0px;
+        }
+
+        #pic ul li div:nth-child(2) {
+            top: 360px;
+            transform-origin: top; /*旋转轴心是上边*/
+            transform: translateZ(180px) rotateX(-90deg); /*旋转属性*/
+            background: url('images/2.jpg');
+            background-position: -200px;
+            /*控制所以li，所以要用js*/
+        }
+
+        #pic ul li div:nth-child(3) {
+            transform: translateZ(180px);
+            background: url('images/3.jpg');
+            background-position: -400px;
+        }
+
+        #pic ul li div:nth-child(4) {
+            transform: translateZ(-180px) rotateX(180deg); /*translateZ往里推*/
+            background: url('images/4.jpg');
+            /*background-position: -50px;*/
+        }
+
+        /*#pic ul li:hover {*/
+        /*transform: rotateX(180deg); /!*旋转*!/*/
+        /*}*/
+        #tab {
+            position: absolute;
+            width: 100px;
+            height: 20px;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        #tab ul li {
+            width: 20px;
+            height: 20px;
+            background-color: #999;
+            color: #fff;
+            font-size: 12px;
+            line-height: 20px;
+            text-align: center;
+            border-radius: 50%;
+            margin: 0 2px;
+            list-style: none;
+            float: left;
+            cursor: pointer;
+        }
+
+        #tab ul li.on {
+            background: #ffcc66;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="pic">
+        <ul>
+            <!--<li>-->
+            <!--<div>s</div>-->
+            <!--<div>x</div>-->
+            <!--<div>q</div>-->
+            <!--<div>h</div>-->
+            <!--</li>-->
+            <!--<li>-->
+            <!--<div>s</div>-->
+            <!--<div>x</div>-->
+            <!--<div>q</div>-->
+            <!--<div>h</div>-->
+            <!--</li>-->
+            <!--<li>-->
+            <!--<div>s</div>-->
+            <!--<div>x</div>-->
+            <!--<div>q</div>-->
+            <!--<div>h</div>-->
+            <!--</li>-->
+            <!--<li>-->
+            <!--<div>s</div>-->
+            <!--<div>x</div>-->
+            <!--<div>q</div>-->
+            <!--<div>h</div>-->
+            <!--</li>-->
+        </ul>
+    </div>
+    <div id="tab"><!--轮播图效果-->
+        <ul>
+            <li class="on">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+
+    </div>
+</div>
+</body>
+<script>
+    /*  1.特性是谁产生的
+        2.获取到这个元素节点
+        3.点击不同li会有不同事情发生
+
+     */
+    var tabLi = document.getElementById('tab').getElementsByTagName('li');//通过id获取父元素，通过tag获取元素节点
+    var oCss = document.getElementById('css');
+    var oUl = document.getElementsByTagName('ul')[0];
+    for (var i = 0; i < tabLi.length; i++) {
+        tabLi[i].index = i;//每个对象新建以一个index属性把i保存起来
+        tabLi[i].onclick = function () {
+            for (var j = 0; j < tabLi.length; j++) {
+                tabLi[j].className = '';
+            }
+            this.className = 'on';
+            oCss.innerHTML += '#pic ul li{transform:translateZ(-180px)' +
+                    'rotateX(' + this.index * (-90) + 'deg)}';
+        }
+    }
+
+    play(100);
+
+    function play(num) {
+        var width = 800 / num;
+        var uHtml = '', pHtml = '', z = 0, zHtml = '', tHtml = '';
+        for (var i = 0; i < num; i++) {
+            if (i > num / 2) {
+                z--;
+                zHtml += "#pic ul li:nth-child(" + (i + 1) + "){z-index:" + z + "}";
+            }
+            uHtml += "<li><div></div><div></div><div></div><div></div></li>";//加块(一个块用4个面)
+            pHtml += "#pic ul li:nth-child(" + (i + 1) + ") div{background-position:" + (-width) * i + "px}";//图片偏移
+            tHtml += "#pic ul li:nth-child(" + (i + 1) + "){transition:1s " + 0.008 * i + "s}";//延迟
+        }
+        oUl.innerHTML = uHtml;
+        oCss.innerHTML += pHtml + zHtml + uHtml + tHtml + '#pic ul li,#pic ul li div{width:' + width + 'px}';
+    }
+
+</script>
+</html>
+
