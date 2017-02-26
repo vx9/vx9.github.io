@@ -15,21 +15,22 @@
         canvas {
             /*width:600px;*/
             /*height:648px;要在标签里面改，不能在这里*/
+            /*background:red;*/
             display:block;
             margin:auto;
 
         }
-        /*引入自定义字体库
+        /*引入自定义字体库*/
         @font-face{
             src:url("fonts/qs.otf");
             font-family:qs;
-        }*/
+        }
         /*
             @keyframes css3帧动画
             @media 媒体查询
         */
     </style>
-</head>
+</head><!--onload="draw()"-->
 <body>
 <canvas id="can" width="900" height="500">
   您的浏览器不支持canvas，请更换支持canvas的浏览器，谢谢。
@@ -43,13 +44,16 @@
     <option value="images/blue.png">blue</option>
     <option value="images/green.png">green</option>
 </select>
-
+<!--<img src="img/icon.png" id="img">-->
 <script>
     var can = document.getElementById('can');
     var txt = document.getElementById('txt');
     var bg = document.getElementById('bg');
+    //var oImg = document.getElementById('img');
     var cxt = can.getContext("2d");
-
+//    function draw(){
+//        cxt.drawImage(oImg,0,0,100,100);
+//    }
     var oImg = new Image();
     var oBg = new Image();
     oImg.src = "images/bcb_1.png";
@@ -70,7 +74,7 @@
         var padd = 50;
         var ft = Math.ceil((can.width - padd*2)/txt.value.length);
         //必须加上文字类型才能显示 文本大小尺寸
-        cxt.font= ft +'px 隶书';
+        cxt.font= ft +'px qs';
         //设置文本垂直基线
 
             //获取文本真宽度,没有高度
