@@ -57,7 +57,6 @@
             height: 2rem;
             color: #fff;
             text-align: center;
-            margin:1rem auto 0.4rem;
         }
 
         header h3 {
@@ -113,7 +112,7 @@
         .progress {
             width: 9rem;
             height: 0.1rem;
-            background: #456d14;
+            background: #214110;
             margin: 0.8rem auto;
 
         }
@@ -182,11 +181,11 @@
             {src:"mp3/孤芳不自赏.mp3",imgSrc:"images/孤芳不自赏.jpg",singer:"霍尊",title:"孤芳不自赏"}
         ];
 
-        $singerImg.attr("src",music[0].imgSrc);
+        $singerImg.attr("src",music[2].imgSrc);
 //        $myMusic是原生DOM的audio对象，所以不能用attr
-        $myMusic.src = music[0].src;
-        $title.text(music[0].title);
-        $name.text(music[0].singer);
+        $myMusic.src = music[2].src;
+        $title.text(music[2].title);
+        $name.text(music[2].singer);
 
         //切歌
         $(".pre").click(function(){
