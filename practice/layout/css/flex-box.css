@@ -1,0 +1,37 @@
+/*flex布局；可以实现主栏和侧栏的调换。*/
+*{
+    margin:0;
+    padding:0;
+}
+.wrap{
+    width:960px;
+    margin:20px auto;
+}
+header{
+    height:50px;
+    margin-bottom:10px;
+    background:red;
+}
+#content{
+    margin-bottom:10px;
+}
+footer{
+    background:yellow;
+}
+#content {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    /*flex-flow: row-reverse;*//*该项设置了就可以主栏放右边，侧栏放在左边，默认是flex-flow:row*/
+}
+main{
+    flex: 1;/*按比例缩小或者放大，如果没有这一项就会是按照内容宽度显示*/
+    background:green;
+    margin-right:10px;
+}
+aside{
+    width:200px;
+    background:blue;
+}

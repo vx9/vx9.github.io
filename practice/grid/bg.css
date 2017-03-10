@@ -1,0 +1,31 @@
+ul{
+    background:green;
+    width:165px;
+    height:165px;
+    margin: 10px auto;
+    padding:0 0 5px 5px;
+}
+/*ul 的padding:0 0 5px 5px;对应li的margin:5px 5px 0 0;对应最后li的位移。*/
+li{
+    float:left;
+    list-style:none;
+    width:50px;
+    height:50px;
+    line-height:50px;
+    margin:5px 5px 0 0;
+    position:relative;
+}
+li a{
+    text-decoration:none;
+    background:gray;
+    display:block;
+    width:50px;
+    height:50px;
+
+}
+li a:hover{
+    border:solid red 5px;
+    position:absolute;
+    left:-5px;
+    top:-5px;
+}

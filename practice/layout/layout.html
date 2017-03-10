@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>布局问题</title>
+    <link id='style' href="css/flex-box.css" rel="stylesheet" type="text/css" >
+    <link rel="icon" type="image/png" href="../../images/icon.png">
+</head>
+<body>
+<div class="wrap">
+    <div style="text-align:center;margin:10px;">
+        以主内容优先为原则，以左右顺序可通过css调为原则。absolute有溢出问题。float有主内容不能优先问题。
+    </div>
+    <header>header</header>
+    <div id="content">
+        <main>
+            <div id="inner">main<br>主栏</div>
+        </main>
+        <!--主栏写在前面，因为主栏比侧栏重要，搜索引擎是从上往下解析内容的。中文如果超过宽度会换行，英文数字超过不会自动换行。需要加上break-word:break-all;-->
+        <aside>aside<br>中文如果超过宽度会换行，对于连续的英文和数字超过不会自动换行。需要加上break-word:break-all;</aside>
+    </div>
+    <footer>footer</footer>
+    <div style="text-align:center;margin:10px;">
+        请选择css方法：
+        <label><input type="radio" name="css"  value="absolute-margin" onclick="changeCSS(this);"/>absolute+margin</label>
+        <label><input type="radio" name="css"  value="float-margin" onclick="changeCSS(this);"/>float+margin</label>
+        <label><input type="radio" name="css" value="holy-grail" onclick="changeCSS(this);"/>圣杯布局</label>
+        <label><input type="radio" name="css"  value="fly-swing" onclick="changeCSS(this);"/>双飞翼布局</label>
+        <label><input type="radio" name="css" value="flex-box" checked onclick="changeCSS(this);"/>弹性盒子flex布局</label>
+        <br /><br />
+        <p><a href="http://blog.csdn.net/qq_21184771/article/details/60882871" target="_blank" style="text-decoration:none;"><strong>学习文档</strong></a></p>
+    </div>
+</div>
+<script>
+    var style = document.getElementById('style');
+    function changeCSS(element) {
+            style.href = 'css/'+element.value+'.css';
+    }
+</script>
+</body>
+</html>

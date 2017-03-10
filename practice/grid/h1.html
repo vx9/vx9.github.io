@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>九宫格padding/margin/border</title>
+    <link href="z-index.css" id="style" type="text/css" rel="stylesheet">
+    <link href="../../images/icon.png" rel="icon" type="image/png">
+    <style >
+        /*使用 HTML+CSS 实现如图布局，border-width:5px，格子大小是 50px*50px，hover时边框变成红色
+        给li加框。*/
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            text-align:center;
+            margin: 20px;
+        }
+        .clearfix:after{
+            content:'.';
+            display:block;
+            clear:both;
+            visibility:hidden;
+            font-size:0;
+            line-height:0;
+        }
+        .clearfix:after{
+            *zoom:1;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <p>使用 HTML+CSS 实现如图布局，border-width:5px，格子大小是 50px*50px，hover时边框变成红色。注意层叠。</p>
+    <ul class="clearfix">
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+        <li><a href="#">7</a></li>
+        <li><a href="#">8</a></li>
+        <li><a href="#">9</a></li>
+    </ul>
+    <p>
+        请选择css方法：
+        <label><input type="radio" name="css"  value="z-index" checked onclick="change(this);"/>小方块加边框，负margin遮盖，z-index。</label>
+        <label><input type="radio" name="css"  value="bg" onclick="change(this);"/>小方块无边框有颜色，margin撑开距离，悬浮加边框，绝对定位。</label>
+    </p>
+</div>
+<script>
+    var style = document.getElementById('style');
+    function change(ele) {
+        style.href = ele.value + '.css';
+    }
+</script>
+</body>
+</html>

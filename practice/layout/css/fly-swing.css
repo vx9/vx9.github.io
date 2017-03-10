@@ -1,0 +1,49 @@
+/*双飞翼布局
+与圣杯布局模型区别如下：
+给main外层加一个div，使之成为BFC,设置margin-left/right，这样aside就不用relative相对自身定位了。
+1.主要的内容先加载的优化；
+2.兼容目前所有的主流浏览器，包括IE6在内；
+3.实现不同的布局方式，可以通过调整相关CSS属性即可实现。*/
+*{
+    margin:0;
+    padding:0;
+}
+.wrap{
+    width:960px;
+    margin:20px auto;
+}
+header{
+    height:50px;
+    margin-bottom:10px;
+    background:red;
+}
+#content{
+    margin-bottom:10px;
+}
+
+#content:after{
+    content:'.';
+    display:block;
+    visibility:hidden;
+    clear:both;
+    height:0;
+    line-height:0;
+    font-size:0;
+}
+main{
+    float:left;
+    width:100%;
+}
+aside{
+    float:left;
+    width:200px;
+    background:blue;
+    margin-left:-200px;/*-200px是上升到右侧，-100%是上升到左侧*/
+}
+#inner{
+    margin-right:210px;
+    background:green;
+}
+footer{
+    background:yellow;
+}

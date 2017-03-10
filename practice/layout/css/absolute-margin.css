@@ -1,0 +1,36 @@
+/*absolute+margin
+absolute脱离文档流，不影响上下文，
+所以无法撑起父元素#content的高度，如果侧栏内容多于主栏内容（侧栏高度低于主栏高度），侧栏则会溢出父元素#content*/
+*{
+    margin:0;
+    padding:0;
+}
+.wrap{
+    width:960px;
+    margin:20px auto;
+}
+header{
+    height:50px;
+    margin-bottom:10px;
+    background:red;
+}
+#content{
+    position:relative;
+    margin-bottom:10px;
+}
+main{
+    margin-left:210px;
+    background:green;
+
+}
+aside{
+    position:absolute;
+    top:0;
+    left:0;
+    width:200px;
+    background:blue;
+    word-break: break-all;
+}
+footer{
+    background:yellow;
+}

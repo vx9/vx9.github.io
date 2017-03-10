@@ -1,0 +1,58 @@
+/*圣杯布局 float+relative+负margin
+ <div id="content">
+        <main>
+            main<br>主栏
+        </main>
+        <!--栏写在前面，因为主栏比侧栏重要，搜索引擎是从上往下解析内容的。中文如果超过宽度会换行，英文数字超过不会自动换行。需要加上break-word:break-all;-->
+        <aside>aside<br>中文如果超过宽度会换行，对于连续的英文和数字超过不会自动换行。需要加上break-word:break-all;</aside>
+  </div>
+main和aside全部float，aside宽度固定，main宽度自适应。100%；这样main占满一栏，aside在下一栏。
+aside利用margin-left:-100%实现上升到main一栏的左侧，如果margin-left:-aside宽度 实现上升到main一栏的右侧。
+为了不让aside遮住main的内容，给父元素加（aside在左侧）padding-left:aside宽度;（aside在右侧）padding-right:aside宽度；
+aside作为父元素中的一部分，左/右侧出现了aside自身宽度的空白，所以利用relative自身定位，相对自己移位。
+http://www.cnblogs.com/tinyphp/p/4742922.html
+http://blog.doyoe.com/2013/12/02/css/margin系列之与相对偏移的异同/
+*/
+*{
+    margin:0;
+    padding:0;
+}
+.wrap{
+    width:960px;
+    margin:0 auto;
+}
+header{
+    height:50px;
+    margin-bottom:10px;
+    background:red;
+}
+#content{
+    margin-bottom:10px;
+    padding-right:210px;
+}
+/*清除浮动*/
+#content:after{
+    content:'.';
+    display:block;
+    visibility:hidden;
+    clear:both;
+    height:0;
+    line-height:0;
+    font-size:0;
+}
+main{
+    float:left;
+    background:green;
+    width:100%;
+}
+aside{
+    float:left;
+    width:200px;
+    background:blue;
+    margin-left:-200px;
+    position:relative;
+    right:-210px;
+}
+footer{
+    background:yellow;
+}

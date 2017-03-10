@@ -1,0 +1,43 @@
+/*float+margin
+1.清除浮动clear:both/父元素overflow:hidden/父元素clearfix
+2.不能主内容优先放，因为浮动元素需要放在正常元素前面
+*/
+*{
+    margin:0;
+    padding:0;
+}
+.wrap{
+    width:960px;
+    margin:20px auto;
+}
+header{
+    height:50px;
+    margin-bottom:10px;
+    background:red;
+}
+#content{
+    margin-bottom:10px;
+}
+/*清除浮动*/
+#content:after{
+    content:'.';
+    display:block;
+    visibility:hidden;
+    clear:both;
+    height:0;
+    line-height:0;
+    font-size:0;
+}
+main{
+    margin-right:210px;
+    background:green;
+}
+aside{
+    float:right;
+    width:200px;
+    background:blue;
+    /*word-break: break-all;*/
+}
+footer{
+    background:yellow;
+}
