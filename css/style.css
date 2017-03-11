@@ -316,8 +316,27 @@ img{
     }
 
     .index_header .header .down .icon-arrow2_down {
-        -webkit-animation: jump 2s cubic-bezier(0.15, 0.95, 0.41, 0.95) both infinite;
-        animation: jump 2s cubic-bezier(0.15, 0.95, 0.41, 0.95) both infinite;
+        -webkit-animation: jump 1s ease-in both infinite;
+        animation: jump 1s ease-in both infinite;
+    }
+
+    .tricker {
+        height: 30px;
+        overflow: hidden;
+        margin: 0 auto 10px;
+    }
+
+    .tricker p {
+        color: white;
+        margin: 0;
+        height: 30px;
+        line-height: 30px;
+        font-size: 20px;
+        text-align: center;
+        text-transform: uppercase;
+        -webkit-animation: play 3s  cubic-bezier(0.59, 0.62, 0.43, 1.27) infinite;
+        -o-animation: play 3s  cubic-bezier(0.59, 0.62, 0.43, 1.27) infinite;
+        animation: play 3s  cubic-bezier(0.59, 0.62, 0.43, 1.27) infinite;
     }
     .main_wrap {
         max-width: 68.75em;
@@ -515,6 +534,26 @@ footer div {
     }
     100% {
         transform: translate(0, 0);
+    }
+}
+
+@keyframes play {
+    0%{
+        transform:translateY(0);
+
+    }
+    100%{
+        transform:translateY(-30px);
+    }
+}
+
+@-webkit-keyframes play {
+    0%{
+        transform:translateY(0);
+
+    }
+    100%{
+        transform:translateY(-30px);
     }
 }
 

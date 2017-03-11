@@ -24,7 +24,7 @@ footer{
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    /*flex-flow: row-reverse;*//*该项设置了就可以主栏放右边，侧栏放在左边，默认是flex-flow:row*/
+    /*flex-direction: row-reverse;*//*该项设置了就可以主栏放右边，侧栏放在左边，默认是flex-flow:row*/
 }
 main{
     flex: 1;/*按比例缩小或者放大，如果没有这一项就会是按照内容宽度显示*/

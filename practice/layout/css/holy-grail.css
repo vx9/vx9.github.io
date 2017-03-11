@@ -9,9 +9,8 @@
 main和aside全部float，aside宽度固定，main宽度自适应。100%；这样main占满一栏，aside在下一栏。
 aside利用margin-left:-100%实现上升到main一栏的左侧，如果margin-left:-aside宽度 实现上升到main一栏的右侧。
 为了不让aside遮住main的内容，给父元素加（aside在左侧）padding-left:aside宽度;（aside在右侧）padding-right:aside宽度；
-aside作为父元素中的一部分，左/右侧出现了aside自身宽度的空白，所以利用relative自身定位，相对自己移位。
-http://www.cnblogs.com/tinyphp/p/4742922.html
-http://blog.doyoe.com/2013/12/02/css/margin系列之与相对偏移的异同/
+aside作为父元素中的一部分，左/右侧出现了aside自身宽度的空白，所以利用relative自身定位，相对aside自己移位，left:20px，相对自身向右移动20px是的左边距离原来左边有20px
+如果是两栏布局可以不用设置最小宽度，如果是三栏布局要设置，因为不设置的话，党宽度小于一定值右栏就会掉下去。
 */
 *{
     margin:0;
@@ -49,6 +48,8 @@ aside{
     float:left;
     width:200px;
     background:blue;
+    /*由于浮动的原因，margin负值会移位，
+    主内容在aside前面时，如果margin-left:-100%;aside在左侧。如果margin-left:-200px;aside在右侧。*/
     margin-left:-200px;
     position:relative;
     right:-210px;
