@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="../../images/icon.png">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <title>大家一起转圈圈</title>
+    <script>
+        //        em是相对单位长度，相对父元素font-size.
+        //        rem是相对于html的font-size,默认是16px，那么1rem=16px;
+        //        让设备宽/10作为font-size，利用rem实现自适应。10rem就是屏幕宽度
+        document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 10 + "px";
+    </script>
+    <style>
+        *{
+            margin:0;padding:0;
+        }
+        main{
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+
+            flex-flow:column wrap;
+            -webkit-flex-flow: column;
+
+            justify-content: center;
+            align-items: center;
+        }
+
+        .stage {
+            /*min-width: 200px;*/
+            height:3rem;
+            width:3rem;
+            /*background: gray;*/
+            perspective: 1000rem;
+            position: relative;
+            margin-top:.5rem;
+        }
+
+        #wrap {
+            transform-style: preserve-3d;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -1rem;
+            margin-top: -1rem;
+            width: 2rem;
+            height: 2rem;
+            background:rgba(0,0,0,0);
+            -webkit-animation: rot 5s linear  infinite forwards;
+            -o-animation: rot 5s linear infinite forwards;
+            animation: rot 5s linear  infinite forwards;
+        }
+
+        #wrap img {
+            position: absolute;
+            bottom: 0;
+            width: 1.8rem;
+            height: 1.8rem;
+        }
+
+        #wrap:hover{
+            -webkit-animation-play-state: paused;
+            -moz-animation-play-state: paused;
+            -o-animation-play-state: paused;
+            animation-play-state: paused;
+        }
+
+        #wrap img:nth-child(1) {
+            transform: rotateY(0deg) translateZ(2rem) ;
+        }
+
+        #wrap img:nth-child(2) {
+            transform: rotateY(60deg) translateZ(2rem);
+        }
+
+        #wrap img:nth-child(3) {
+            transform: rotateY(120deg) translateZ(2rem);
+        }
+
+        #wrap img:nth-child(4) {
+            transform: rotateY(180deg) translateZ(2rem);
+        }
+
+        #wrap img:nth-child(5) {
+            transform: rotateY(240deg) translateZ(2rem);
+        }
+
+        #wrap img:nth-child(6) {
+            transform: rotateY(300deg) translateZ(2rem);
+        }
+
+        @keyframes rot {
+            0% {
+                transform: rotateY(0deg);
+            }
+            16% {
+                transform: rotateY(-60deg);
+            }
+            33% {
+                transform: rotateY(-120deg);
+            }
+            50% {
+                transform: rotateY(-180deg);
+            }
+            66% {
+                transform: rotateY(-240deg);
+            }
+            100% {
+                transform: rotateY(-300deg);
+            }
+        }
+        @-webkit-keyframes rot {
+            0% {
+                transform: rotateY(0deg);
+            }
+            16% {
+                transform: rotateY(-60deg);
+            }
+            33% {
+                transform: rotateY(-120deg);
+            }
+            50% {
+                transform: rotateY(-180deg);
+            }
+            66% {
+                transform: rotateY(-240deg);
+            }
+            100% {
+                transform: rotateY(-300deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+<main>
+    <div class="stage">
+        <div id="wrap">
+            <img src="images/ajax.png" id="1">
+            <img src="images/bootstrap.png" id="2">
+            <img src="images/css3.png" id="3">
+            <img src="images/html.png" id="4">
+            <img src="images/react.png" id="5">
+            <img src="images/nodejs.png" id="6">
+        </div>
+    </div>
+</main>
+
+</body>
+</html>
