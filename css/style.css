@@ -289,7 +289,7 @@ img{
         -webkit-transform: scale(0, 0);
         transform: scale(0, 1);
         transform-origin: 50% 0;
-        -webkit-transform-oritin:50% 0;
+        -webkit-transform-origin:50% 0;
     }
 
     .header .menu_wrapper .nav li a:hover {

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <title>简历</title>
+    <script>
+        //        em是相对单位长度，相对父元素font-size.
+        //        rem是相对于html的font-size,默认是16px，那么1rem=16px;
+        //        让设备宽/10作为font-size，利用rem实现自适应。10rem就是屏幕宽度
+        document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth / 10 + "px";
+    </script>
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<main>
+    <div class="right">
+        <div class="myPic"></div>
+        <ul class="list_box">
+            <li class="list list_1">基本情况</li>
+            <li class="list list_2">项目情况</li>
+            <li class="list list_3">基本技能</li>
+            <li class="list list_4">其他情况</li>
+        </ul>
+    </div>
+    <div class="stage">
+        <div id="wrap">
+            <img src="images/img1.gif" id="img1">
+            <img src="images/img2.gif" id="img2">
+            <img src="images/img3.gif" id="img3">
+            <img src="images/img4.gif" id="img4">
+        </div>
+        <div class="flat">
+        <a href="于新_北邮_前端开发_18311097906.pdf">下载简历</a>
+        <a href="ex_index_1.html">查看平版简历</a>
+    </div>
+    </div>
+
+    <div id="box">
+        <div><span id="close">x</span></div>
+        <div>
+            <div id="situation1">
+                <p>基本情况</p>
+                <br/>
+                    <p>2014.09-2018.03    北京邮电大学  网络技术研究院/国家重点实验室/计算机科学与技术          硕士</p>
+                    <p>备注：2015.09-2016.09期间因生育哺乳休学一年(学校硬性规定)。</p>
+                    <p>2010.09-2014.07    中国传媒大学   理工学部计算机学院/计算机科学与技术(1/52保研)           学士</p>
+                <br />
+                <p>	英语水平：大学英语四级CET-4，大学英语六级CET-6，具有优秀的听说读写译能力。</p>
+                <p> 特长爱好：书法十级，演讲，主持，唱歌，运动。</p>
+                <p>   自我评价：较强的团队合作能力和学习能力，抗压能力强，做事严谨，善与人沟通。</p>
+            </div>
+            <div id="situation2">
+                <p>项目情况</p>
+            <p>2014.10 – 2015.8         |        西门子（中国）研究院            |          测试&Java开发</p>
+            <p>&nbsp;&nbsp;一、中国移动内部用户统一管理系统（公司内部已投入使用）</p>
+            <p>1.基于SSI框架，Ajax和Java实现功能模块的前后台交互；</p>
+            <p>2.测试模块功能，发现系统问题并做及时修正；</p>
+            <p>3.编写需求分析书、项目设计说明书等技术文档。</p>
+            <p>&nbsp;&nbsp;二、中航信内部机房设备集中管理平台</p>
+            <p>1.使用SSI框架，利用Java语言实现后台功能；</p>
+            <p>2.Bootstrap框架，构建前端JSP页面的3D展示；</p>
+            <p>3.在兼容原有业务基础上，针对新需求完成数据库表设计。</p>
+            <p>2012.09 – 2014.03           |       全国大学生创新计划项目          |      项目负责人&前端开发</p>
+            <p>&nbsp;&nbsp;三、基于图像的服装检索系统    ,    基于生物特征的模拟登陆系统</p>
+            <p>1.使用Java、CSS(3)、HTML(5)、jQuery、MySQL、JSP等技术构建网站；</p>
+            <p>2.团队建设，业务逻辑设计，文档编写。</p>
+            </div>
+            <div id="situation3">
+                <p>基本技能</p>
+                <br />
+                <p>熟练使用各种Web前端技术JavaScript、HTML(5)、CSS(3)等，博客：https://vx9.github.io；</p>
+                <p>熟悉Bootstrap框架，熟悉jQuery框架；</p>
+                <p>熟练使用Git、Eclipse、webStrom等工具，GitHub地址：https://github.com/vx9；</p>
+                <p>熟悉Java语言、JSP技术、SSI框架、Web标准等；</p>
+                <p>熟悉基本的数据结构和算法，了解HTTP等基本网络协议。</p>
+
+            </div>
+            <div id="situation4">
+                <p>其他情况</p>
+                <br />
+                <p>2014 – 2016 北京邮电大学校级奖学金，校级优秀党员；</p>
+                <p>2010 – 2014 国家奖学金（1次），中国传媒大学校级一等奖学金（3次），中央三台奖学金（1次），北京市优秀毕业生，北京市三好学生，校级优秀干部、三好学生等；</p>
+                <p>2013 “蓝桥杯”软件设计大赛 优秀奖，“挑战杯”全国大学生课外学术科技作品竞赛校内 二等奖；</p>
+                <p>2012   首届北京市大学生书法大赛 一等奖；</p>
+                <p>2011  第一届“人民电器”杯全国大学生政策性辩论推广赛 团体第五名。</p>
+
+            </div>
+        </div>
+
+    </div>
+
+</main>
+<script type="text/javascript" src="../practice/player/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+
+</body>
+</html>
